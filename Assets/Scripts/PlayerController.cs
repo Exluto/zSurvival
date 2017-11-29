@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+	private float m_speed = 10.0f;
+	private float m_Sensitivity = 10.0f;
+	CharacterController m_player;
+
+	
 	// Use this for initialization
 	void Start () {
+		GetComponent<CharacterController>();
 		
 	}
 	
