@@ -15,28 +15,20 @@ public class TrapActive : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/* 
-		if (PlayerPoints >= 1500){
-			OnPoints = true;
-			
-
-		} */
-
-        timer += Time.deltaTime;
+		//OnPoints is true if player has enough points
+		if(power){
+			timer += Time.deltaTime;
+		}
+		Debug.Log(timer);
         if(timer >= 10 && power) {
             power = false;
-			OnPoints = false;
+			timer = 0;
 		}
 	}
 
 	void OnTriggerEnter (Collider other){
         if(other.gameObject.tag == "Player" & OnPoints) {
-            while(OnPoints){
-				power= true;
-			}
-			
-			Debug.Log("touch");
-			//PlayerPoints =- 1500;
+			power= true;
         }
     }
 }

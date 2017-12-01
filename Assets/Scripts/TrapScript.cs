@@ -28,7 +28,7 @@ public class TrapScript : MonoBehaviour {
     void Update(){
         trapOn = trapActive.power;
         if(trapOn){
-            Debug.Log("on");
+            //Debug.Log("on");
             runTrap();
         } else if (!trapOn) {
             stopTrap();
@@ -45,16 +45,26 @@ public class TrapScript : MonoBehaviour {
         trapOn = false;
     }
 
-	void OnTriggerEnter (Collider other){
+	/*void OnTriggerEnter (Collider other){
 		if(other.gameObject.tag == "Enemy"){
 			if(trapOn){
 			EnemyHealth enemyHealth = other.GetComponent <EnemyHealth> ();
-
                 if(enemyHealth != null){
                 enemyHealth.TakeDamage (100, hitPoint);
                 }
-			
             }
+        }
+    }*/
+
+    void OnTriggerStay (Collider other ){
+        Debug.Log("fire");
+        if(other.gameObject.tag == "Enemy"){
+			if(trapOn){
+			EnemyHealth enemyHealth = other.GetComponent <EnemyHealth> ();
+                if(enemyHealth != null){
+                enemyHealth.TakeDamage (100, hitPoint);
+                }
+            }
+        }
     }
-}
 }
