@@ -29,7 +29,7 @@ namespace DigitalRuby.PyroParticles
         public float StopTime = 3.0f;
 
         [Tooltip("How long the effect lasts. Once the duration ends, the script lives for StopTime and then the object is destroyed.")]
-        public float Duration = 2.0f;
+        public float Duration = 20.0f;
 
         [Tooltip("How much force to create at the center (explosion), 0 for none.")]
         public float ForceAmount;
