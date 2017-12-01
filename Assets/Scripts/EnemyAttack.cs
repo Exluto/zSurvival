@@ -29,14 +29,12 @@ public class EnemyAttack : MonoBehaviour {
         if(other.gameObject.tag == "Player") {
             // ... the player is in range.
             playerInRange = true;
-			Debug.Log("Range");
         }
     }
 
     void OnTriggerExit (Collider other){
         if(other.gameObject.tag == "Player") {
             playerInRange = false;
-			Debug.Log("OutRange");
 			anim.SetBool("Attack", false);
         }
     }
@@ -62,7 +60,6 @@ public class EnemyAttack : MonoBehaviour {
 
     void Attack (){
         timer = 0f;
-		Debug.Log("attack");
 		anim.SetBool("Attack", true);
         // If the player has health to lose...
       /*  if(playerHealth.currentHealth > 0)
