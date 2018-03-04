@@ -5,6 +5,7 @@ using System.Collections;
 public class SpawnManager : MonoBehaviour {
 
 
+/*
 private void Start(){
 //--Rect set up--
 rect_message_nextWave = new Rect(Screen.width/2-80,
@@ -423,4 +424,5 @@ if(message_nextWave){
 amount_message_nextWave -= Time.deltaTime;
 }
 }
+*/
 }
